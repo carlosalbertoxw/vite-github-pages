@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Precios — Cauce</title>
+    <meta
+      name="description"
+      content="Tres planes con precio publico y comparativa detallada. Cifras ficticias de demostracion."
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- include: header -->
+
+    <main id="contenido">
+      <section class="portada">
+        <div class="contenedor contenedor--estrecho">
+          <p class="antetitulo">Precios</p>
+          <h1>Precio publico, sin llamada previa</h1>
+          <p class="entradilla">
+            Todos los planes incluyen paneles ilimitados y actualizaciones. Cifras ficticias,
+            solo para la demo.
+          </p>
+
+          <div class="conmutador" role="group" aria-label="Periodo de facturacion">
+            <button type="button" class="conmutador__opcion es-activa" data-periodo="mensual">
+              Mensual
+            </button>
+            <button type="button" class="conmutador__opcion" data-periodo="anual">
+              Anual <span class="pastilla">-20 %</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="seccion seccion--sin-tope">
+        <div class="contenedor">
+          <div class="rejilla rejilla--3 rejilla--planes">
+            <article class="plan" data-revelar>
+              <h2 class="plan__nombre">Inicio</h2>
+              <p class="plan__descripcion">Para un equipo que empieza a medir en serio.</p>
+              <p class="plan__precio">
+                <span class="plan__moneda">€</span><span data-precio data-mensual="290" data-anual="232">290</span>
+                <span class="plan__periodo">/ mes</span>
+              </p>
+              <p class="plan__nota" data-nota-periodo>Facturado mensualmente</p>
+              <a class="boton boton--fantasma boton--bloque" href="contacto.html">Empezar prueba</a>
+              <ul class="lista-marcas">
+                <li>Hasta 10 usuarios</li>
+                <li>5 conectores</li>
+                <li>Paneles ilimitados</li>
+                <li>Actualizacion diaria de datos</li>
+                <li>Soporte por correo</li>
+              </ul>
+            </article>
+
+            <article class="plan plan--destacado" data-revelar>
+              <p class="plan__insignia">El mas contratado</p>
+              <h2 class="plan__nombre">Equipo</h2>
+              <p class="plan__descripcion">Cuando varias areas dependen de los mismos numeros.</p>
+              <p class="plan__precio">
+                <span class="plan__moneda">€</span><span data-precio data-mensual="740" data-anual="592">740</span>
+                <span class="plan__periodo">/ mes</span>
+              </p>
+              <p class="plan__nota" data-nota-periodo>Facturado mensualmente</p>
+              <a class="boton boton--primario boton--bloque" href="contacto.html">Pedir una demo</a>
+              <ul class="lista-marcas">
+                <li>Hasta 50 usuarios</li>
+                <li>20 conectores</li>
+                <li>Modelado de indicadores incluido</li>
+                <li>Actualizacion cada hora</li>
+                <li>Alertas en Slack y Teams</li>
+                <li>Canal de soporte compartido</li>
+              </ul>
+            </article>
+
+            <article class="plan" data-revelar>
+              <h2 class="plan__nombre">Corporativo</h2>
+              <p class="plan__descripcion">Varias sedes, auditoria y requisitos propios.</p>
+              <p class="plan__precio plan__precio--texto">A medida</p>
+              <p class="plan__nota">Contrato anual</p>
+              <a class="boton boton--fantasma boton--bloque" href="contacto.html">Hablar con ventas</a>
+              <ul class="lista-marcas">
+                <li>Usuarios ilimitados</li>
+                <li>Conectores a medida</li>
+                <li>Actualizacion en tiempo real</li>
+                <li>Inicio de sesion unico (SSO)</li>
+                <li>Registro de auditoria</li>
+                <li>Acuerdo de nivel de servicio firmado</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="seccion">
+        <div class="contenedor">
+          <header class="seccion__cabecera" data-revelar>
+            <p class="antetitulo">Comparativa</p>
+            <h2>Todo lo que incluye cada plan</h2>
+          </header>
+
+          <div class="tabla-envoltorio" data-revelar>
+            <table class="tabla">
+              <caption class="visualmente-oculto">
+                Comparativa de caracteristicas entre los planes Inicio, Equipo y Corporativo
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Caracteristica</th>
+                  <th scope="col">Inicio</th>
+                  <th scope="col">Equipo</th>
+                  <th scope="col">Corporativo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Usuarios</th>
+                  <td>10</td>
+                  <td>50</td>
+                  <td>Ilimitados</td>
+                </tr>
+                <tr>
+                  <th scope="row">Conectores</th>
+                  <td>5</td>
+                  <td>20</td>
+                  <td>A medida</td>
+                </tr>
+                <tr>
+                  <th scope="row">Frecuencia de actualizacion</th>
+                  <td>Diaria</td>
+                  <td>Cada hora</td>
+                  <td>Tiempo real</td>
+                </tr>
+                <tr>
+                  <th scope="row">Historico de datos</th>
+                  <td>12 meses</td>
+                  <td>36 meses</td>
+                  <td>Sin limite</td>
+                </tr>
+                <tr>
+                  <th scope="row">Modelado de indicadores</th>
+                  <td class="no">—</td>
+                  <td class="si">Incluido</td>
+                  <td class="si">Incluido</td>
+                </tr>
+                <tr>
+                  <th scope="row">Alertas por umbral</th>
+                  <td class="si">Si</td>
+                  <td class="si">Si</td>
+                  <td class="si">Si</td>
+                </tr>
+                <tr>
+                  <th scope="row">Inicio de sesion unico (SSO)</th>
+                  <td class="no">—</td>
+                  <td class="no">—</td>
+                  <td class="si">Si</td>
+                </tr>
+                <tr>
+                  <th scope="row">Registro de auditoria</th>
+                  <td class="no">—</td>
+                  <td class="no">—</td>
+                  <td class="si">Si</td>
+                </tr>
+                <tr>
+                  <th scope="row">Tiempo de respuesta de soporte</th>
+                  <td>48 h</td>
+                  <td>8 h</td>
+                  <td>4 h</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="seccion seccion--alterna">
+        <div class="contenedor contenedor--estrecho">
+          <header class="seccion__cabecera" data-revelar>
+            <p class="antetitulo">Dudas habituales</p>
+            <h2>Sobre la facturacion</h2>
+          </header>
+
+          <div class="faq" data-revelar>
+            <details>
+              <summary>Puedo cambiar de plan a mitad de mes?</summary>
+              <p>
+                Si. El cambio se prorratea sobre los dias restantes y se refleja en la siguiente
+                factura, tanto si subes como si bajas.
+              </p>
+            </details>
+            <details>
+              <summary>Que pasa si supero el numero de usuarios?</summary>
+              <p>
+                Nada se bloquea. Te avisamos al llegar al 90 % y acordamos el salto de plan en la
+                siguiente renovacion.
+              </p>
+            </details>
+            <details>
+              <summary>La implantacion se cobra aparte?</summary>
+              <p>
+                En Inicio y Equipo esta incluida. En Corporativo se presupuesta segun el numero de
+                sedes y sistemas a conectar.
+              </p>
+            </details>
+            <details>
+              <summary>Hay permanencia?</summary>
+              <p>
+                En mensual no. En anual el compromiso es de doce meses a cambio del 20 % de
+                descuento.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="contenedor cta__interior" data-revelar>
+          <div>
+            <h2>Prueba 14 dias con tus datos</h2>
+            <p>Sin tarjeta y sin llamada obligatoria de ventas.</p>
+          </div>
+          <a class="boton boton--claro" href="contacto.html">Empezar ahora</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- include: footer -->
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

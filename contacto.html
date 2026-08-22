@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Contacto — Cauce</title>
+    <meta
+      name="description"
+      content="Formulario de contacto de demostracion, datos de la oficina y preguntas frecuentes. Contenido ficticio."
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- include: header -->
+
+    <main id="contenido">
+      <section class="portada">
+        <div class="contenedor contenedor--estrecho">
+          <p class="antetitulo">Contacto</p>
+          <h1>Hablamos 30 minutos</h1>
+          <p class="entradilla">
+            Cuentanos que proceso quieres medir. Respondemos en menos de un dia habil.
+          </p>
+        </div>
+      </section>
+
+      <section class="seccion seccion--sin-tope">
+        <div class="contenedor">
+          <div class="contacto">
+            <!--
+              GitHub Pages sirve archivos estaticos: no hay servidor que reciba el POST.
+              Este formulario valida y confirma en el navegador, a modo de demostracion.
+              Para recibir los mensajes de verdad, apunta el `action` a un servicio externo
+              (Formspree, Basin, Getform...) y quita el preventDefault de src/main.js.
+            -->
+            <form class="formulario" data-formulario novalidate data-revelar>
+              <div class="campo">
+                <label for="nombre">Nombre y apellidos</label>
+                <input id="nombre" name="nombre" type="text" required autocomplete="name" />
+                <p class="campo__error" data-error-de="nombre"></p>
+              </div>
+
+              <div class="campo">
+                <label for="email">Correo de trabajo</label>
+                <input id="email" name="email" type="email" required autocomplete="email" />
+                <p class="campo__error" data-error-de="email"></p>
+              </div>
+
+              <div class="campo">
+                <label for="empresa">Empresa</label>
+                <input id="empresa" name="empresa" type="text" autocomplete="organization" />
+              </div>
+
+              <div class="campo">
+                <label for="equipo">Tamano del equipo</label>
+                <select id="equipo" name="equipo">
+                  <option value="1-10">1 a 10 personas</option>
+                  <option value="11-50" selected>11 a 50 personas</option>
+                  <option value="51-200">51 a 200 personas</option>
+                  <option value="200+">Mas de 200 personas</option>
+                </select>
+              </div>
+
+              <div class="campo">
+                <label for="mensaje">Que quieres medir?</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                <p class="campo__error" data-error-de="mensaje"></p>
+              </div>
+
+              <label class="casilla">
+                <input type="checkbox" name="privacidad" required />
+                <span>Acepto que me contacten para responder a esta consulta.</span>
+              </label>
+              <p class="campo__error" data-error-de="privacidad"></p>
+
+              <button class="boton boton--primario boton--bloque" type="submit">
+                Enviar consulta
+              </button>
+
+              <p class="formulario__aviso" data-aviso role="status"></p>
+            </form>
+
+            <aside class="contacto__lateral" data-revelar>
+              <div class="cuadro">
+                <h2>Otras vias</h2>
+                <ul class="lista-contacto">
+                  <li>
+                    <span class="lista-contacto__etiqueta">Correo</span>
+                    <a href="mailto:hola@cauce.example">hola@cauce.example</a>
+                  </li>
+                  <li>
+                    <span class="lista-contacto__etiqueta">Telefono</span>
+                    <a href="tel:+34900000000">+34 900 000 000</a>
+                  </li>
+                  <li>
+                    <span class="lista-contacto__etiqueta">Soporte de clientes</span>
+                    <a href="mailto:soporte@cauce.example">soporte@cauce.example</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="cuadro">
+                <h2>Oficina</h2>
+                <p class="cuadro__texto">
+                  Calle Ejemplo 000<br />
+                  28000 Madrid<br />
+                  Espana
+                </p>
+                <p class="cuadro__texto cuadro__texto--tenue">
+                  Lunes a viernes, de 9:00 a 18:00 (CET)
+                </p>
+              </div>
+
+              <div class="cuadro cuadro--acento">
+                <h2>Prefieres verlo directamente?</h2>
+                <p class="cuadro__texto">
+                  Reserva una demo de 30 minutos sobre un proceso real tuyo. Sin presentacion
+                  generica.
+                </p>
+                <a class="boton boton--primario boton--bloque boton--sm" href="precios.html">
+                  Ver planes
+                </a>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="seccion seccion--alterna" id="faq">
+        <div class="contenedor contenedor--estrecho">
+          <header class="seccion__cabecera" data-revelar>
+            <p class="antetitulo">Preguntas frecuentes</p>
+            <h2>Antes de escribirnos</h2>
+          </header>
+
+          <div class="faq" data-revelar>
+            <details open>
+              <summary>Cuanto tarda una implantacion tipica?</summary>
+              <p>
+                Entre dos y cuatro semanas desde la sesion de diagnostico, segun cuantos sistemas
+                haya que conectar y en que estado esten los datos.
+              </p>
+            </details>
+            <details>
+              <summary>Necesito un equipo de datos propio?</summary>
+              <p>
+                No. La mayoria de nuestros clientes de demostracion no tienen uno. Si lo tienes,
+                trabajamos con el y le dejamos el control del modelado.
+              </p>
+            </details>
+            <details>
+              <summary>Donde se alojan los datos?</summary>
+              <p>
+                En centros de datos de la Union Europea. En el plan Corporativo se puede desplegar
+                en tu propia infraestructura.
+              </p>
+            </details>
+            <details>
+              <summary>Se puede exportar todo si dejamos de ser clientes?</summary>
+              <p>
+                Si, en cualquier momento y sin coste: datos, definiciones de indicadores e
+                historico completo.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- include: footer -->
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
