@@ -1,5 +1,5 @@
-// Punto de entrada compartido por todas las paginas.
-// Cada modulo se auto-desactiva si su HTML no esta presente, asi que el mismo
+// Punto de entrada compartido por todas las páginas.
+// Cada modulo se auto-desactiva si su HTML no esta presente, así que el mismo
 // bundle sirve para el inicio, precios o contacto sin comprobaciones extra aqui.
 import { iniciarNavegacion } from './modules/navegacion.js'
 import { iniciarRevelado } from './modules/revelado.js'

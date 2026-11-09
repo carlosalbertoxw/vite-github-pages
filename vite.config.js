@@ -25,8 +25,13 @@ const paginas = Object.fromEntries(
 //
 // Corre con order 'pre', antes del procesado de assets de Vite, para que las rutas
 // que vengan dentro del partial tambien reciban el prefijo de `base`.
+//
+// Ademas sustituye `{{base}}` por la `base` resuelta. Vite no reescribe los `href`
+// de las etiquetas <a>, y los enlaces relativos se rompen en la 404: GitHub Pages
+// la sirve en la URL pedida (p. ej. /<repo>/blog/post), no en la raiz del sitio.
 function partialsHtml() {
   const cache = new Map()
+  let base = '/'
 
   const leer = (nombre) => {
     if (!cache.has(nombre)) {
@@ -38,18 +43,24 @@ function partialsHtml() {
   return {
     name: 'partials-html',
 
+    configResolved(config) {
+      base = config.base
+    },
+
     transformIndexHtml: {
       order: 'pre',
       handler(html, ctx) {
         const paginaActual = basename(ctx.filename)
 
-        return html.replace(/<!--\s*include:\s*([\w-]+)\s*-->/g, (_, nombre) => {
-          // Marca el enlace de la pagina actual en el menu (estilo + accesibilidad).
-          return leer(nombre).replaceAll(
-            `data-pagina="${paginaActual}"`,
-            `data-pagina="${paginaActual}" aria-current="page"`,
-          )
-        })
+        return html
+          .replace(/<!--\s*include:\s*([\w-]+)\s*-->/g, (_, nombre) => {
+            // Marca el enlace de la pagina actual en el menu (estilo + accesibilidad).
+            return leer(nombre).replaceAll(
+              `data-pagina="${paginaActual}"`,
+              `data-pagina="${paginaActual}" aria-current="page"`,
+            )
+          })
+          .replaceAll('{{base}}', base)
       },
     },
 
@@ -69,6 +80,6 @@ export default defineConfig(({ command }) => ({
   base: command === 'build' ? `/${repo}/` : '/',
   plugins: [partialsHtml()],
   build: {
-    rollupOptions: { input: paginas },
+    rolldownOptions: { input: paginas },
   },
 }))

@@ -1,4 +1,4 @@
-// Menu de navegacion en movil: abrir, cerrar y mantener aria-expanded al dia.
+// Menú de navegación en movil: abrir, cerrar y mantener aria-expanded al día.
 
 export function iniciarNavegacion() {
   const boton = document.querySelector('.nav-toggle')
@@ -9,18 +9,18 @@ export function iniciarNavegacion() {
   const cerrar = () => {
     nav.classList.remove('es-abierta')
     boton.setAttribute('aria-expanded', 'false')
-    boton.querySelector('.visualmente-oculto').textContent = 'Abrir menu'
+    boton.querySelector('.visualmente-oculto').textContent = 'Abrir menú'
   }
 
   boton.addEventListener('click', () => {
     const abierta = nav.classList.toggle('es-abierta')
     boton.setAttribute('aria-expanded', String(abierta))
     boton.querySelector('.visualmente-oculto').textContent = abierta
-      ? 'Cerrar menu'
-      : 'Abrir menu'
+      ? 'Cerrar menú'
+      : 'Abrir menú'
   })
 
-  // Cerrar al navegar a un ancla de la misma pagina.
+  // Cerrar al navegar a un ancla de la misma página.
   nav.addEventListener('click', (evento) => {
     if (evento.target.closest('a')) cerrar()
   })
@@ -29,6 +29,6 @@ export function iniciarNavegacion() {
     if (evento.key === 'Escape') cerrar()
   })
 
-  // Si se vuelve a escritorio, el menu desplegable deja de tener sentido.
+  // Si se vuelve a escritorio, el menú desplegable deja de tener sentido.
   window.matchMedia('(min-width: 761px)').addEventListener('change', cerrar)
 }

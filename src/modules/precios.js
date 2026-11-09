@@ -1,5 +1,5 @@
-// Conmutador mensual / anual de la pagina de precios.
-// Los importes viven en el HTML (data-mensual / data-anual) para que la pagina
+// Conmutador mensual / anual de la página de precios.
+// Los importes viven en el HTML (data-mensual / data-anual) para que la página
 // siga siendo legible y correcta aunque el JS no llegue a ejecutarse.
 
 const formateador = new Intl.NumberFormat('es-ES')

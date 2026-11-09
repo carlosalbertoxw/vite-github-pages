@@ -1,14 +1,14 @@
 // Validacion del formulario de contacto.
 //
 // GitHub Pages es hosting estatico: no hay backend que reciba el envio. Este
-// modulo valida en el navegador y confirma en pantalla, a modo de demostracion.
+// modulo valida en el navegador y confirma en pantalla, a modo de demostración.
 // Para recibir los mensajes de verdad, pon un `action` a un servicio externo
 // (Formspree, Basin, Getform...) y borra el `evento.preventDefault()` de abajo.
 
 const MENSAJES = {
   nombre: 'Escribe tu nombre.',
   email: 'Escribe un correo valido.',
-  mensaje: 'Cuentanos brevemente que quieres medir.',
+  mensaje: 'Cuéntanos brevemente qué quieres medir.',
   privacidad: 'Necesitamos tu consentimiento para responderte.',
 }
 
@@ -59,9 +59,9 @@ export function iniciarFormulario() {
     }
 
     const datos = Object.fromEntries(new FormData(formulario))
-    console.info('Datos del formulario (demo, no se envian):', datos)
+    console.info('Datos del formulario (demo, no se envían):', datos)
 
-    aviso.textContent = `Gracias, ${datos.nombre.split(' ')[0]}. Es una demo, asi que el mensaje no se ha enviado a ningun sitio.`
+    aviso.textContent = `Gracias, ${datos.nombre.split(' ')[0]}. Es una demo, así que el mensaje no se ha enviado a ningún sitio.`
     formulario.reset()
   })
 }
